@@ -1,0 +1,11 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+# 3.3.0 has known JWT algorithm-confusion and DoS advisories; this verifies auth.
+python-jose[cryptography]==3.5.0
+pydantic==2.9.2
+pydantic-settings==2.5.2
+python-dotenv==1.0.1
+# Photo analysis — MediaPipe requires Python 3.11 (see Dockerfile)
+mediapipe>=1.0.0
+pillow==10.4.0
+numpy==1.26.4

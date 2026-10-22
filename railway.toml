@@ -1,0 +1,9 @@
+[build]
+builder = "DOCKERFILE"
+
+[deploy]
+startCommand = "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+healthcheckPath = "/health"
+# Importing MediaPipe on a cold container takes a few seconds.
+healthcheckTimeout = 120
+restartPolicyType = "ON_FAILURE"
