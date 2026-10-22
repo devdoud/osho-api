@@ -5,9 +5,11 @@ services:
     # pose model, which a plain Python runtime would not do.
     runtime: docker
     dockerfilePath: ./Dockerfile
+    plan: free
     healthCheckPath: /health
     envVars:
-      # Your Supabase project's JWT Secret (Settings -> API -> JWT Secret).
+      # This API's own signing secret, unrelated to Supabase. Render prompts for
+      # it because of sync: false. See .env.example.
       - key: JWT_SECRET
         sync: false
       - key: JWT_ALGORITHM
